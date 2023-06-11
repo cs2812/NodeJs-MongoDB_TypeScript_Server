@@ -1,0 +1,53 @@
+
+<style>
+  .tableDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .toolbar {
+    display: flex;
+    background-color: #0593c8;
+  }
+</style>
+
+<div class="container" role="banner">
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    />
+    <span style="margin-top: 11px">Welcome</span>
+  </div>
+
+  <div class="tableDiv">
+    
+    <table style="border: 1px solid">
+      <tr style="border: 1px solid; background-color: #2db3e5">
+        <th style="border: 1px solid">Panel Name</th>
+        <th style="border: 1px solid">Mac Id</th>
+        <th style="border: 1px solid">Lat</th>
+        <th style="border: 1px solid">Long</th>
+        <th style="border: 1px solid">Location</th>
+      </tr>
+      <tr *ngFor="let item of Datatable">
+      <td style="border:1px solid">
+        <button mat-flat-button (click)="openDialog(item)">
+          {{item.panel_name}}
+        </button>
+      </td>
+      <td style="border:1px solid; ">{{item.mac_id}}</td>
+      <td style="border:1px solid;">{{item.Lat}}</td>
+      <td style="border:1px solid;">{{item.Lng}}</td>
+      <td style="border:1px solid;">
+        <button mat-flat-button (click)="openMapDialog(item)">
+          Location_Icon
+        </button>
+      </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
